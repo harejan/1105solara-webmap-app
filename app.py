@@ -1,8 +1,7 @@
 import solara
-import solara.lab
 
 # 1. 這是您的「佈局」 (Layout)
-# 它會套用到所有頁面，並負責顯示側邊欄
+# 它會套用到所有頁面 (包含 pages/ 裡的)，並負責顯示側邊欄
 @solara.component
 def Layout(children):
     return solara.AppLayout(children=children)

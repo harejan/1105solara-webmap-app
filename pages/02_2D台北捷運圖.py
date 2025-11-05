@@ -54,8 +54,13 @@ def create_map():
 
 @solara.component
 def Page():
-    # 建立地圖
-    m = create_map()
     
-    # 將地圖物件轉換為 Solara 元件
+    # (A) 設定瀏覽器分頁標題
+    solara.Title("台北捷運路網圖")
+    
+    # (B) 這是「頁面上的可見標題」 
+    solara.Markdown("## 台北捷運路網圖") 
+    
+    # (C) 建立並顯示地圖
+    m = create_map()
     return m.to_solara()
