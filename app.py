@@ -1,16 +1,16 @@
 import solara
 
-# 1. 建立一個「響應式」變數 (元件的私有記憶)
-count = solara.reactive(0)
+# 匯入 Solara 的標準 App 佈局
+# AppLayout 會自動處理側邊欄、標題等
+from solara.template import AppLayout
 
-# 2. 定義一個 Solara 元件 (用 @ 裝飾)
+# 'children' 參數是 Solara 自動傳入的
+# 它代表了您當前頁面 (例如 01_home.py) 的所有內容
 @solara.component
-def Page():
-    solara.Title("我的 Solara App")
-    solara.Markdown(f"## 按鈕被點擊了 {count.value} 次！")
+def Layout(children):
+    return AppLayout(children=children)
 
-    def increment():
-        count.value += 1 # 改變狀態值
-
-    # 3. 建立一個按鈕，綁定 on_click 事件
-    solara.Button("點我！", on_click=increment)
+# 注意：
+# 在這個檔案中，我們不需要定義 Page 元件
+# 因為 Solara 會自動使用這個 Layout 
+# 來包裝 pages/ 資料夾中的 Page 元件

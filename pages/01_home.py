@@ -4,4 +4,4 @@ import solara
 @solara.component
 def Page():
     solara.Title("首頁")  # 使用 solara.Title 來設定頁面標題
-    solara.Markdown("這是我的首頁 (來自 01_home.py)")
+    solara.Markdown("這是我的首頁 ")
