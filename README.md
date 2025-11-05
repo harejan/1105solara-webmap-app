@@ -1,5 +1,3 @@
-# 1105solara-webmap-app
-it's an exetcise
 ---
 title: My Solara GIS App
 emoji: 🌍
