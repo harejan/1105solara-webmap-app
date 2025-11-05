@@ -1,1 +1,8 @@
 solara
+geopandas
+leafmap
+ipyleaflet # ú 2D W
+rasterio
+xarray
+localtileserver
+maplibre
