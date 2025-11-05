@@ -1,14 +1,20 @@
 import solara
 
 # 1. 這是您的「佈局」 (Layout)
-# 它會套用到所有頁面 (包含 pages/ 裡的)，並負責顯示側邊欄
+# 
+# solara.AppLayout 會「自動」掃描 `pages` 資料夾
+# 並將它們「呈現」在側邊欄中。
+# 
 @solara.component
 def Layout(children):
+    # solara.AppLayout 就是負責「呈現分頁」的元件
     return solara.AppLayout(children=children)
 
 
 # 2. 這是您的「根頁面」 (Page at /)
-# 我們用這個頁面來執行「重定向」
+# 
+# 它的唯一工作就是將使用者導向至 `01_home.py` (也就是 /home)
+#
 @solara.component
 def Page():
     # 獲取 Solara 的路由
@@ -26,5 +32,4 @@ def Page():
     solara.use_effect(redirect_if_root, [])
     
     # 在重定向發生時，我們不需要顯示任何內容
-    # 返回一個空的 Div 即可
     return solara.Div()
